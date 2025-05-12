@@ -1,0 +1,36 @@
+name: Retrain ML Model (Notebook)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install nbconvert jupyter
+
+    - name: Run Jupyter Notebook
+      run: |
+        jupyter nbconvert --to notebook --execute lrmi.ipynb --output executed_train.ipynb
+
+    - name: Save model artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: trained-model
+        path: models/trained_model.pkl
