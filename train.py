@@ -11,7 +11,7 @@ df = pd.read_csv("submission_example.csv")  # Make sure this file is committed
 X = df.drop(columns=["medv"])  # MEDV is the target
 y = df["medv"]
 
-print("resulttt")
+print("resultttt")
 # Train/test split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
