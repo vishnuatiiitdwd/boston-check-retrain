@@ -33,4 +33,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: trained-model
-          path: models/trained_model.pkl
+          path: regmodel.pkl
