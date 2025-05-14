@@ -8,6 +8,14 @@ on:
     paths:
       - "train.py"
 
+  workflow_dispatch:
+    inputs:
+      retrain:
+        description: "Trigger model retraining"
+        required: false
+        default: "false"
+        
+
 jobs:
   retrain:
     runs-on: ubuntu-latest
