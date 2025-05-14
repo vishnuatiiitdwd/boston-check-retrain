@@ -27,7 +27,7 @@ jobs:
           pip install pandas scikit-learn
 
       - name: Run Training Script
-        run: python train.py
+        run: python train1.py
 
       - name: Upload Trained Model
         uses: actions/upload-artifact@v4
