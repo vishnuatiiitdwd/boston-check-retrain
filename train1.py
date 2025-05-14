@@ -10,7 +10,7 @@ parser.add_argument('--data_path', required=True)
 args = parser.parse_args()
 
 # Load the dataset
-df = pd.read_csv(args.data_path)
+df = pd.read_csv(args.data_path, delimiter=';')  # if using semicolon
 
 # Basic preprocessing
 X = df.drop(columns=["medv"])  # Assuming "medv" is the target column
