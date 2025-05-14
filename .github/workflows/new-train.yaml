@@ -5,7 +5,8 @@ on:
     inputs:
       csv_url:
         description: 'Google Drive Direct CSV URL'
-        required: false
+        required: true
+        type: string
 
 jobs:
   train:
