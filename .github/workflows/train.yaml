@@ -24,3 +24,13 @@ jobs:
 
       - name: Train model
         run: python train.py --data_path dataset.csv
+        
+      - name: Debug Workspace
+        run: |
+          echo "📂 Current Directory:"
+          pwd
+          echo "📁 List of files:"
+          ls -la
+          echo "🌲 Directory tree (top level):"
+          ls -R | head -n 100
+
