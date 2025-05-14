@@ -12,11 +12,12 @@ args = parser.parse_args()
 # Load the dataset
 df = pd.read_csv(args.data_path, sep='\t')  # if tab-separated # if using semicolon
 
-# Basic preprocessing
-X = df.drop(columns=["MEDV"])  # Assuming "medv" is the target column
-y = df["MEDV"]
-
 print("Available columns:", df.columns.tolist())
+# Basic preprocessing
+X = df.drop(columns=["medv"])  # Assuming "medv" is the target column
+y = df["medv"]
+
+
 
 # Train/test split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
