@@ -6,7 +6,13 @@ on:
       - main
       - main2
     paths:
-      - "train.py"
+      - "train1.py"
+
+  workflow_dispatch:
+    inputs:
+      csv_url:
+        description: 'Google Drive Direct CSV URL'
+        required: true
 
 jobs:
   retrain:
