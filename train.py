@@ -5,8 +5,12 @@ import pickle
 import os
 
 # Load the CSV manually
-df = pd.read_csv("submission_example.csv")  # Make sure this file is committed
+# df = pd.read_csv("submission_example.csv")  # Make sure this file is committed
+parser = argparse.ArgumentParser()
+parser.add_argument('--data_path', required=True)
+args = parser.parse_args()
 
+df = pd.read_csv(args.data_path)
 # Basic preprocessing
 X = df.drop(columns=["medv"])  # MEDV is the target
 y = df["medv"]
