@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name : Download Dataset
-        run: curl -L "${{ github.event.inputs.csv_url }}" -o dataset.csv
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -29,7 +27,7 @@ jobs:
           pip install pandas scikit-learn
 
       - name: Run Training Script
-        run: python train1.py --data_path dataset.csv
+        run: python train1.py --data_path "https://drive.google.com/uc?export=download&id=1PI1hMJR7dvDYwTZX3BON65fA9ZSMNMOb"
 
       - name: Upload Trained Model
         uses: actions/upload-artifact@v4
