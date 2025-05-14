@@ -1,10 +1,20 @@
 name: Retrain Model
-
 on:
   push:
     paths:
       - "train.py"
       - "data/**"
+      
+  workflow_dispatch:
+    inputs:
+      retrain:
+        description: "Trigger model retraining"
+        required: false
+        default: "false"
+        
+  repository_dispatch:
+    types: [retrain] 
+  
 
 jobs:
   retrain:
