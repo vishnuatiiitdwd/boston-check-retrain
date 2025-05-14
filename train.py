@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import pickle
 import os
+import argparse
 
 # Load the CSV manually
 # df = pd.read_csv("submission_example.csv")  # Make sure this file is committed
