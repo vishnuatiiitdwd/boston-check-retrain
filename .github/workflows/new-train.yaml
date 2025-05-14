@@ -1,0 +1,35 @@
+name: Train Model
+
+on:
+  workflow_dispatch:
+    inputs:
+      csv_url:
+        description: 'Google Drive Direct CSV URL'
+        required: true
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Download dataset from Google Drive URL
+      - name: Download dataset
+        run: |
+          curl -L "${{ github.event.inputs.csv_url }}" -o dataset.csv
+
+      # Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: pip install pandas scikit-learn joblib
+
+      # Run the training script (make sure you have 'train.py' for the model)
+      - name: Train model
+        run: python train1.py --data_path dataset.csv
