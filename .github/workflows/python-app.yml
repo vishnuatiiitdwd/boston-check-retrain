@@ -1,19 +1,7 @@
 name: Retrain Model
 
 on:
-  push:
-    branches:
-      - main
-      - main2
-    paths:
-      - "train1.py"
-
   workflow_dispatch:
-    inputs:
-      csv_url:
-        description: 'Google Drive Direct CSV URL'
-        required: true
-
 jobs:
   retrain:
     runs-on: ubuntu-latest
