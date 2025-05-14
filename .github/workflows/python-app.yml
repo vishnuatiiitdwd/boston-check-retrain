@@ -2,6 +2,11 @@ name: Retrain Model
 
 on:
   workflow_dispatch:
+    inputs:
+      csv_url:
+        description: 'Google Drive Direct CSV URL'
+        required: true
+        type: string
 jobs:
   retrain:
     runs-on: ubuntu-latest
