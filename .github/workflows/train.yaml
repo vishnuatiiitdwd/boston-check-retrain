@@ -23,4 +23,4 @@ jobs:
         run: pip install pandas scikit-learn joblib
 
       - name: Train model
-        run: python train3.py --data_path dataset.csv
+        run: python train.py --data_path dataset.csv
