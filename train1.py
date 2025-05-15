@@ -125,3 +125,4 @@ os.makedirs("models", exist_ok=True)
 joblib.dump(model, "models/trained_model.pkl")
 print("Model saved to models/trained_model.pkl")
 
+print("finished")
